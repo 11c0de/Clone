@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>o_O LOVE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      section {
+        border-bottom: 1px solid black;
+        background-color: #000000;
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 70px;
+        padding: 0px 20px;
+    
+        
+      }
+      .navbar a {
+        font-size: 20px;
+        margin-left: 16px;
+        color: white;
+        text-transform: uppercase;
+      }
+      .navbar a:hover {
+        color: red;
+      }
+      .logo {
+        font-size: 25px;
+        color: white;
+      }
+
+      #menu-btn {
+        font-size: 25px;
+        color: white;
+        display: none;
+      }
+      #close {
+        font-size: 25px;
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        #menu-btn,
+        #close {
+          display: block;
+        }
+        .flex {
+          padding: 0px 20px;
+        }
+        .navbar {
+          position: fixed;
+          top: 0px;
+          left: -10000px;
+          background-color: #faf9f9;
+          width: 55%;
+          height: 100vh;
+          transition: 0.5s;
+        }
+        .navbar.active {
+          left: 0;
+        }
+        .navbar a {
+          display: block;
+          color: black;
+          margin-top: 50px;
+          margin-left: 0px;
+          padding-left: 20px;
+        }
+        #close {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <section>
+        <div class="flex">
+          <div class="logo">o_O LOVE</div>
+          <div id="menu-btn" class="ri-menu-fold-4-fill"></div>
+          <nav class="navbar">
+            <div id="close" class="ri-close-fill"></div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Shops</a>
+          </nav>
+        </div>
+      </section>
+    </header>
+
+
+    <script>
+      let menu = document.getElementById("menu-btn");
+      let navbar = document.querySelector(".navbar");
+      menu.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+      });
+      window.onscroll = () => {
+        navbar.classList.remove("active");
+      };
+      let close = document.getElementById("close");
+      close.addEventListener("click", function () {
+        navbar.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
